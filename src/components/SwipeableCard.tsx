@@ -2,7 +2,13 @@ import React from 'react'
 import { View, Image, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
-const SwipeableCard = ({ swipeData,setSelectedItemSwipe }) => {
+
+interface SwipeableCardProps{
+  swipeData:Array<any>,
+  setSelectedItemSwipe:any
+}
+
+const SwipeableCard = ({ swipeData,setSelectedItemSwipe }:SwipeableCardProps) => {
 
 const SLIDER_WIDTH = Dimensions.get('window').width *0.8
  const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.6)

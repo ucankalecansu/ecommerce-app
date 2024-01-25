@@ -2,7 +2,14 @@ import React from 'react'
 import { View, Image, Text, TouchableOpacity, StyleSheet, Modal, ScrollView } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const ModalCom = ({selectedItem,closeModal,modalVisible,goBack}) => {
+interface ModalComProps{
+  selectedItem:any,
+  closeModal:()=>void,
+  modalVisible:boolean,
+  goBack:()=>void
+}
+
+const ModalCom = ({selectedItem,closeModal,modalVisible,goBack}:ModalComProps) => {
   return (
     <Modal transparent={true} visible={modalVisible} onRequestClose={closeModal}>
     <View style={styles.modalBackground}>

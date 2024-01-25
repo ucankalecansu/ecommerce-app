@@ -1,8 +1,13 @@
 import React from 'react'
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
+interface CardItemProps{
+  item:any,
+  onPress:()=>void
+}
 
-const CardItem = ({ item, onPress }) => {
+
+const CardItem = ({ item, onPress }:CardItemProps) => {
   return (
     <View style={styles.cardContainer}>
     <Image source={item.imageUri} style={styles.cardImage} />

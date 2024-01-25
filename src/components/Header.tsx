@@ -2,7 +2,11 @@ import React from 'react'
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-const Header = ({handleLoginPress}) => {
+interface PropsHeader{
+  handleLoginPress:()=>void
+}
+
+const Header = ({handleLoginPress}:PropsHeader) => {
   return (
     <View style={styles.headerContainer}>
     <Image source={require("../../assets/logo.png")}resizeMode="contain"style={styles.logo} />
@@ -26,8 +30,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingTop:5
-        
-    
       },
       logo: {
         width: 100,
