@@ -1,4 +1,4 @@
-![image](https://github.com/ucankalecansu/ecommerce-app/assets/54913401/d0d8aa21-65c6-4003-aef7-3089b0123247)
+![image](https://github.com/ucankalecansu/ecommerce-app/assets/54913401/f960a79e-73da-4a81-ab9f-ed6d7d3259d8)
 
 
 
