@@ -25,30 +25,31 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 5,
-        backgroundColor: '#3498db',
+        paddingTop:5
+        
     
       },
       logo: {
-        width: 70,
-        height: 70,
+        width: 100,
+        height: 100,
       },
       rightContainer: {
         flexDirection: 'row',
         alignItems: 'center',
       },
       loginButton: {
-        backgroundColor: '#fff',
+        backgroundColor: 'red',
         padding: 10,
-        borderRadius: 5,
+        borderRadius: 20,
         marginRight: 10,
       },
       loginButtonText: {
-        color: '#3498db', 
+        color: 'white', 
       },
       userIconContainer: {
         borderRadius: 25,
         overflow: 'hidden',
+        
       },
       userIcon: {
         width: 30,

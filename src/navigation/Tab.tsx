@@ -9,13 +9,16 @@ import styles from './styles';
 
 const Tabs = () => {
   const Tab = createBottomTabNavigator();
-
   const screenOptions = {
     tabBarStyle: {
       backgroundColor:"#fff",
       borderRadius:15,
       height:70,
     },
+  };
+  const commonTabOptions = {
+    tabBarInactiveTintColor: 'gray',
+    headerShown: false,
   };
 
   return (
@@ -24,11 +27,10 @@ const Tabs = () => {
         name="Discover"
         component={DiscoverScreen}
         options={() => ({
+          ...commonTabOptions,
           tabBarIcon: ({ color }) => (
             <Ionicons color={color} size={50} name={'compass'} />
           ),
-          tabBarInactiveTintColor: 'gray',
-          headerShown: false,
          
         })}
       />
@@ -36,7 +38,7 @@ const Tabs = () => {
         name="Custom"
         component={CustomScreen}
         options={() => ({
-      
+          ...commonTabOptions,
           tabBarIcon: () => (
             <Image
               source={require('../../assets/plus.png')}
@@ -44,8 +46,6 @@ const Tabs = () => {
               style={styles.image}
             />
           ),
-          tabBarInactiveTintColor: 'gray',
-          headerShown: false,
           tabBarIconStyle:{
             position:"absolute",
             top:-30,
@@ -65,11 +65,10 @@ const Tabs = () => {
         name="Wallet"
         component={WalletScreen}
         options={() => ({
+          ...commonTabOptions,
           tabBarIcon: ({ color }) => (
             <Ionicons color={color} size={50} name={'star'} />
           ),
-          tabBarInactiveTintColor: 'gray',
-        
         })}
       />
     </Tab.Navigator>

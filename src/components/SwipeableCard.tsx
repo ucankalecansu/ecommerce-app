@@ -1,23 +1,26 @@
 import React from 'react'
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
-const SwipeableCard = ({ swipeData }) => {
+const SwipeableCard = ({ swipeData,setSelectedItemSwipe }) => {
+
+const SLIDER_WIDTH = Dimensions.get('window').width *0.8
+ const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.6)
   return (
     <View style={styles.swipeCardContainer}>
     <Carousel
       data={swipeData}
       renderItem={({ item }) => (
-        <View style={styles.swipeCardContent}>
-          <View style={{display:"flex",flexDirection:"row", gap:10,alignItems:"center"}}>
-          <Image  source={item.img} resizeMode="contain" style={styles.img} />
-          <Text>{item.text}</Text>
-          </View>
-         
-        </View>
+        <TouchableOpacity onPress={()=>setSelectedItemSwipe(item)} style={styles.swipeCardContent}>
+              <View style={{display:"flex",flexDirection:"row", gap:10,alignItems:"center"}}>
+                <Image  source={item.img} resizeMode="contain" style={styles.img} />
+                <Text>{item.text}</Text>
+            </View>
+        </TouchableOpacity>
       )}
-      sliderWidth={550}
-      itemWidth={120}
+      sliderWidth={SLIDER_WIDTH}
+      itemWidth={ITEM_WIDTH}
+      inactiveSlideShift={2}     
     />
   </View>
   )
@@ -27,9 +30,9 @@ export default SwipeableCard
 
 const styles=StyleSheet.create({
     swipeCardContainer: {
- 
         height: 50,
         alignContent:"center",
+        justifyContent:"center",
         margin:10,
       },
       swipeCardContent: {
